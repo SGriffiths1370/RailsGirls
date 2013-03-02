@@ -1,10 +1,10 @@
-<h1>Listing ideas</h1>
+<h1><em>Shannon's Ideas</h1>
 
 <table>
   <tr>
+    <th>Picture</th>
     <th>Name</th>
     <th>Description</th>
-    <th>Picture</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,12 +12,12 @@
 
 <% @ideas.each do |idea| %>
   <tr>
+    <td><%= image_tag(idea.picture_url, :width => 125) %></td>
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>
-    <td><%= idea.picture %></td>
-    <td><%= link_to 'Show', idea %></td>
-    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', idea, class: 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-info' %></td>
+    <td><%= link_to 'Destroy', idea, class: 'btn btn-danger',confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
